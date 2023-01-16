@@ -1,0 +1,4 @@
+<div class="data w-1/5 h-1/2 m-2 flex items-center justify-center border border-dotted border-white  text-white font-bold" id="{{CId}}"
+hx-get="/edit_data/" hx-trigger = "click" hx-target = "#{{CId}}" hx-swap="outerHTML" hx-vars="{'d_Id': '{{CId}}', 'data': ' {{changed_value}}'}">
+    {{changed_value}}
+</div>

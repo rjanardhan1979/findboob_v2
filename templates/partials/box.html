@@ -1,0 +1,13 @@
+{% for col in n_cols %}
+{% with cId = 'i_' + row|string + '_' + col|string, col_color = col_colors[loop.index-1] %}
+<div class="w-1/5 {{col_color}} h-20 mx-auto flex justify-start items-center " id= {{cId}}>
+    <div class="data w-1/5 h-1/2 m-2 flex items-center justify-center border border-dotted border-white  text-white font-bold" id="d_{{cId}}"
+    hx-get="/edit_data/" hx-trigger = "click" hx-target = "#d_{{cId}}" hx-swap="outerHTML" hx-vars="{'d_Id': 'd_{{cId}}', 'data': ' {{random_data[cRow, loop.index-1]}}'}">
+        {{random_data[cRow, loop.index-1]}}
+    </div>
+    <div class="mix w-[24%] h-1/2 m-2 rounded-lg flex items-center justify-center border border-solid border-yellow-200 text-sm text-yellow-200 font-semibold" id="m_{{cId}}">
+        {{"%.1f" % col_mix[cRow, loop.index-1]}}%
+    </div>
+</div>
+{% endwith %}
+{% endfor %} 

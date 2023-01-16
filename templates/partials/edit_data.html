@@ -1,0 +1,3 @@
+<input type="text" value = {{current_value}} name="{{cId}}" id="{{cId}}" class="data w-1/5 h-1/2 m-2 flex text-center border border-dotted border-white text-white bg-inherit font-bold"
+    hx-get="/edited_data/" hx-trigger = "change, blur" hx-target = "#{{cId}}" hx-swap="outerHTML" hx-vars="{'d_Id': '{{cId}}'}"
+>  

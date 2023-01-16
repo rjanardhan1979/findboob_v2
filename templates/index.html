@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mx-auto grid-cols-12 gap-2">
+    {% for row in n_rows %}
+        {% with cRow = row %}
+            {% include 'base_boxes.html' %}
+        {% endwith %}
+    {% endfor %}
+</div>
+{% endblock %}
